@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>RAHMANI-XMD - Pair Code</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-color: #0a0705;
+  background-image: 
+    linear-gradient(rgba(255, 184, 0, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 184, 0, 0.02) 1px, transparent 1px);
+  background-size: 30px 30px;
+  overflow:hidden;
+  color:#fff;
+  padding: 15px;
+}
+
+.card{
+  position:relative;
+  width:100%;
+  max-width:400px;
+  padding: 40px 30px;
+  border-radius:35px;
+  background: #120c06;
+  border: 1px solid rgba(255, 184, 0, 0.2);
+  box-shadow: inset 0 0 20px rgba(255, 184, 0, 0.05), 0 10px 40px rgba(0,0,0,0.5);
+  text-align:center;
+  z-index:2;
+}
+
+/* ================= PICHA INAYOZUNGUKA ================= */
+.spinning-logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  padding: 3px;
+  background: linear-gradient(135deg, #ffb800, #ff6b1a, #ffb800);
+  box-shadow: 0 0 25px rgba(255, 184, 0, 0.4);
+  animation: spin 8s linear infinite; /* Picha inazunguka */
+}
+
+.spinning-logo-wrap img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 2px solid #120c06;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ================= MAANDISHI YANAYOBADILIKA RANGI ================= */
+h1{
+  font-family: 'Orbitron', sans-serif;
+  font-size:28px;
+  font-weight:800;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  /* Animation ya rangi zinazobadilika */
+  background: linear-gradient(90deg, 
+    #00f5ff, /* Blue */
+    #ff2e2e, /* Red */
+    #00ff80, /* Green */
+    #ffe600, /* Yellow */
+    #000000, /* Black */
+    #ffffff, /* White */
+    #00f5ff  /* Back to Blue */
+  );
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorShift 4s linear infinite;
+}
+
+/* Animation ya rangi kusogea */
+@keyframes colorShift {
+  0% { background-position: 0% center; }
+  100% { background-position: 300% center; }
+}
+
+/* Kitufe kidogo cha itifaki */
+.protocol-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255, 184, 0, 0.08);
+  border: 1px solid rgba(255, 184, 0, 0.3);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: bold;
+  color: #ffb800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+}
+
+.subtitle{
+  font-size:12px;
+  color:#a08d75;
+  line-height: 1.6;
+  margin-bottom:30px;
+  max-width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input-label {
+  display: block;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffb800;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+input{
+  width:100%;
+  padding:16px;
+  margin-bottom:20px;
+  border-radius:18px;
+  border: 1px solid rgba(255, 184, 0, 0.2);
+  outline:none;
+  background: rgba(255, 184, 0, 0.03);
+  color:#fff;
+  font-size:14px;
+  letter-spacing: 1.5px;
+  transition: 0.3s;
+}
+
+input::placeholder {
+  color: #6b5a45;
+}
+
+input:focus{
+  border-color: #ffb800;
+  box-shadow: 0 0 12px rgba(255, 184, 0, 0.2);
+  background: rgba(255, 184, 0, 0.05);
+}
+
+button{
+  width:100%;
+  padding:16px;
+  border-radius:18px;
+  font-weight:700;
+  font-size:13px;
+  cursor:pointer;
+  margin-bottom: 12px;
+  transition:0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#submit {
+  background: linear-gradient(135deg, #ffb800, #ff6b1a);
+  color: #0a0705;
+  border: none;
+  box-shadow: 0 0 15px rgba(255, 184, 0, 0.3);
+}
+
+#submit:hover {
+  background: linear-gradient(135deg, #ffc933, #ff7b33);
+  box-shadow: 0 0 20px rgba(255, 184, 0, 0.5);
+}
+
+#pairCodeContainer {
+  width: 100%;
+  position: relative;
+  margin-bottom: 12px;
+}
+
+#pairCode {
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 0;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 184, 0, 0.2);
+  background: rgba(0, 0, 0, 0.3);
+  color: #ffb800;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: default;
+}
+
+#copyBtn {
+  background: transparent;
+  border: 1px solid rgba(255, 184, 0, 0.4);
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+#copyBtn:hover {
+  background: rgba(255, 184, 0, 0.05);
+  border-color: #ffb800;
+}
+
+.footer {
+  font-size: 10px;
+  color: #6b5a45;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-top: 1px dashed rgba(255,255,255,0.05);
+  padding-top: 20px;
+}
+
+.footer span {
+  color: #ffb800;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  
+  <!-- PICHA INAYOZUNGUKA -->
+  <div class="spinning-logo-wrap">
+    <img src="https://files.catbox.moe/aktbgo.jpg" alt="RAHMANI-XMD Logo" />
+  </div>
+
+  <!-- MAANDISHI YANAYOBADILIKA RANGI -->
+  <h1>RAHMANI-XMD</h1>
+  
+  <div class="protocol-badge">
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" style="margin-right:2px;">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+    </svg>
+    Secure Pair
+  </div>
+  
+  <div class="subtitle">
+    🔄 End-to-end encrypted handshake · Generate pairing code for WhatsApp Bot
+  </div>
+
+  <span class="input-label">📱 WhatsApp Number (Without '+')</span>
+  <input id="phone" type="tel" placeholder="255XXXXXXXXX" />
+
+  <button id="submit">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M12 22v-3M9 19a6 6 0 0 1-2-4.5M15 19a6 6 0 0 0 2-4.5M5 12a7 7 0 0 1 14 0M12 2a10 10 0 0 0-10 10M12 10a2 2 0 1 0 0 4"></path>
+    </svg>
+    Generate Pair Code
+  </button>
+
+  <div id="pairCodeContainer">
+    <input id="pairCode" type="text" value="AWAITING PAIR REQUEST" readonly />
+  </div>
+
+  <button id="copyBtn">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+    </svg>
+    Copy Code
+  </button>
+
+  <div class="footer">
+    ⚙️ RAHMANI-XMD • <span>by Rahmani Team</span>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
+<script>
+const submitButton = document.getElementById('submit');
+const phoneInput = document.getElementById('phone');
+const pairCodeInput = document.getElementById('pairCode');
+const copyBtn = document.getElementById('copyBtn');
+
+submitButton.addEventListener('click', async () => {
+  let phone = phoneInput.value.trim().replace(/\s+/g,'');
+
+  if(!/^\d{10,15}$/.test(phone)){
+    pairCodeInput.value = "INVALID NUMBER";
+    pairCodeInput.style.color = "#ff3e3e";
+    return;
+  }
+
+  pairCodeInput.value = "GENERATING...";
+  pairCodeInput.style.color = "#ffb800";
+
+  try{
+    const response = await axios.get(`/code?number=${phone}`);
+    const resultCode = response.data.code || 'UNAVAILABLE';
+    pairCodeInput.value = resultCode.toUpperCase();
+  }catch{
+    pairCodeInput.value = "ERROR FETCHING CODE";
+    pairCodeInput.style.color = "#ff3e3e";
+  }
+});
+
+copyBtn.addEventListener('click', () => {
+  const code = pairCodeInput.value;
+  if(code && code !== "AWAITING PAIR REQUEST" && code !== "GENERATING..." && code !== "INVALID NUMBER" && code !== "ERROR FETCHING CODE"){
+    navigator.clipboard.writeText(code).then(() => {
+      const originalText = copyBtn.innerHTML;
+      copyBtn.innerText = "COPIED!";
+      setTimeout(() => copyBtn.innerHTML = originalText, 2000);
+    });
+  }
+});
+</script>
+
+</body>
+</html>
