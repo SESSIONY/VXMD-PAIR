@@ -176,7 +176,7 @@ router.get('/', async (req, res) => {
                             return;
                         }
 
-                        const b64data = 'BMB-TECH~' + Buffer.from(sessionData).toString('base64');
+                        const b64data = 'RAHMANI-XMD~' + Buffer.from(sessionData).toString('base64');
 
                         try {
                             console.log(' Sending session data to user...');
